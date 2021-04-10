@@ -1,1 +1,213 @@
-Files in Java might be tricky, but it is fun enough!oink: 0.7455904560847277
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Marks the field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ENUM_VALUE
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+"some EmmaClass decription text"
+type EmmaClass {
+  "some text"
+  _description: String
+  "some text"
+  _emmaId: String
+  "some text"
+  _hasAlias: Float
+  "some text"
+  _label: String
+  "some text"
+  _metaType: String
+  "some text"
+  _parent: [EmmaClass]
+  "some text"
+  _uri: String
+}
+
+"some DatatypeProperty decription text"
+type EmmaDatatypeProperty {
+  "some text"
+  _description: String
+  "some text"
+  _emmaId: String
+  "some text"
+  _label: String
+  "some text"
+  _metaType: String
+  "some text"
+  _parent: [EmmaClass]
+  "some text"
+  _uri: String
+}
+
+"some ObjectProperty decription text"
+type EmmaObjectProperty {
+  "some text"
+  _description: String
+  "some text"
+  _emmaId: String
+  "some text"
+  _label: String
+  "some text"
+  _metaType: String
+  "some text"
+  _parent: [EmmaClass]
+  "some text"
+  _uri: String
+}
+
+"Mutation root"
+type Mutation {
+  "some EmmaClass decription text"
+  createEmmaClass(
+    "some text"
+    _addParent: [ID], 
+    "some text"
+    _description: String, 
+    "some text"
+    _hasAlias: Float, 
+    "some text"
+    _label: String!
+  ): EmmaClass
+  "some DatatypeProperty decription text"
+  createEmmaDatatypeProperty(
+    "some text"
+    _addParent: [ID], 
+    "some text"
+    _description: String, 
+    "some text"
+    _label: String!
+  ): EmmaDatatypeProperty
+  "some ObjectProperty decription text"
+  createEmmaObjectProperty(
+    "some text"
+    _addParent: [ID], 
+    "some text"
+    _description: String, 
+    "some text"
+    _label: String!
+  ): EmmaObjectProperty
+  "some EmmaClass decription text"
+  deleteEmmaClass(
+    "ID to identify the EmmaClass resource"
+    _ID: String!
+  ): EmmaClass
+  "some DatatypeProperty decription text"
+  deleteEmmaDatatypeProperty(
+    "ID to identify the EmmaDatatypeProperty resource"
+    _ID: String!
+  ): EmmaDatatypeProperty
+  "some ObjectProperty decription text"
+  deleteEmmaObjectProperty(
+    "ID to identify the EmmaObjectProperty resource"
+    _ID: String!
+  ): EmmaObjectProperty
+  "some EmmaClass decription text"
+  updateEmmaClass(
+    "ID to identify the EmmaClass resource"
+    _ID: String!, 
+    "some text"
+    _addParent: [ID], 
+    "some text"
+    _description: String, 
+    "some text"
+    _hasAlias: Float, 
+    "some text"
+    _label: String, 
+    "some text"
+    _removeParent: [ID]
+  ): EmmaClass
+  "some DatatypeProperty decription text"
+  updateEmmaDatatypeProperty(
+    "ID to identify the EmmaDatatypeProperty resource"
+    _ID: String!, 
+    "some text"
+    _addParent: [ID], 
+    "some text"
+    _description: String, 
+    "some text"
+    _label: String, 
+    "some text"
+    _removeParent: [ID]
+  ): EmmaDatatypeProperty
+  "some ObjectProperty decription text"
+  updateEmmaObjectProperty(
+    "ID to identify the EmmaObjectProperty resource"
+    _ID: String!, 
+    "some text"
+    _addParent: [ID], 
+    "some text"
+    _description: String, 
+    "some text"
+    _label: String, 
+    "some text"
+    _removeParent: [ID]
+  ): EmmaObjectProperty
+}
+
+"Query root"
+type Query {
+  "some EmmaClass decription text"
+  getEmmaClassList(
+    "some text"
+    _description: String, 
+    "some text"
+    _emmaId: String, 
+    "some text"
+    _hasAlias: Float, 
+    "some text"
+    _label: String, 
+    "some text"
+    _metaType: String, 
+    "some text"
+    _parent: [ID], 
+    "some text"
+    _uri: Int
+  ): [EmmaClass]
+  "some DatatypeProperty decription text"
+  getEmmaDatatypePropertyList(
+    "some text"
+    _description: String, 
+    "some text"
+    _emmaId: String, 
+    "some text"
+    _label: String, 
+    "some text"
+    _metaType: String, 
+    "some text"
+    _parent: [ID], 
+    "some text"
+    _uri: Int
+  ): [EmmaDatatypeProperty]
+  "some ObjectProperty decription text"
+  getEmmaObjectPropertyList(
+    "some text"
+    _description: String, 
+    "some text"
+    _emmaId: String, 
+    "some text"
+    _label: String, 
+    "some text"
+    _metaType: String, 
+    "some text"
+    _parent: [ID], 
+    "some text"
+    _uri: Int
+  ): [EmmaObjectProperty]
+}
