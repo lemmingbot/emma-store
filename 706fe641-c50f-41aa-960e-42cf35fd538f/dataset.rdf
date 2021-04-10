@@ -1,0 +1,19 @@
+<http://emma.lammel.ch/data#9228691b-907c-4cc0-b021-f2152cfe724c>
+        a       <http://emma.lammel.ch/backup#BackupJob> ;
+        <http://emma.lammel.ch/backup#hasStart>
+                "1618026689469"^^<http://www.w3.org/2001/XMLSchema#long> ;
+        <http://emma.lammel.ch/backup#hasStartDateTime>
+                "2021-04-10T03:51:29.471Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> ;
+        <http://emma.lammel.ch/backup#hasSubJob>
+                <http://emma.lammel.ch/data#Db8d0397-80e6-424b-92c1-812d3d9d7870> ;
+        <http://emma.lammel.ch/backup#hasWorkspaceId>
+                "706fe641-c50f-41aa-960e-42cf35fd538f" .
+
+<http://emma.lammel.ch/data#Db8d0397-80e6-424b-92c1-812d3d9d7870>
+        a       <http://emma.lammel.ch/backup#SubBackupJob> ;
+        <http://emma.lammel.ch/backup#hasJobType>
+                <http://emma.lammel.ch/backup#Triplestore> ;
+        <http://emma.lammel.ch/backup#hasModelSize>
+                "8"^^<http://www.w3.org/2001/XMLSchema#long> ;
+        <http://emma.lammel.ch/backup#hasStart>
+                "1618026689479"^^<http://www.w3.org/2001/XMLSchema#long> .
